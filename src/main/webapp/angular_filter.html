@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Filter Example</title>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myController">
+		<table border="1" width="100%">
+			<thead>
+
+				<tr>
+					<th ng-click="orderByMe('name')">Name</th>
+					<th ng-click="orderByMe('country')">Country</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="data in name| orderBy:myOrderBy">
+					<td align="center">{{data.name}}</td>
+					<td align="center">{{data.country}}</td>
+				</tr>
+			</tbody>
+
+		</table>
+		<!-- <ul><li ng-repeat="data in name">
+			{{data.name+" , "+data.country}}
+		</li>
+		</ul> -->
+	</div>
+
+	<script src="js/personController.js"></script>
+</body>
+</html>
